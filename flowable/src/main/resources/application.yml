@@ -1,0 +1,35 @@
+server:
+  port: 7077
+
+spring:
+  datasource:
+    driver-class-name: com.highgo.jdbc.Driver
+    url: jdbc:highgo://localhost:5866/flowable?useUnicode=true&characterEncoding=utf8&currentSchema=mysql&stringtype=unspecified
+    username: highgo
+    password: Llink@2024
+
+  doc:
+    api-docs:
+      path: /v3/api-docs
+    swagger-ui:
+      path: /swagger-ui.html
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+
+flowable:
+  #关闭定时任务JOB
+  async-executor-activate: false
+  #将databaseSchemaUpdate设置为true。当Flowable发现库与数据库表结构不一致时，会自动将数据库表结构升级至新版本。
+  database-schema-update: false
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
